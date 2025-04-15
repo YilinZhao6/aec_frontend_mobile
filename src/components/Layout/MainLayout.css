@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Base Layout */
+.app-container {
+  @apply flex min-h-screen bg-gray-100 fixed inset-0 overflow-hidden;
+}
+
+/* Mobile Header */
+.mobile-header {
+  @apply fixed top-0 left-0 right-0 h-14 bg-white border-b border-gray-200 flex items-center justify-between px-4 z-50;
+}
+
+.menu-button {
+  @apply p-1.5 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors;
+}
+
+.mobile-actions {
+  @apply flex items-center gap-2;
+}
+
+/* Language Button */
+.language-button {
+  @apply relative p-1.5 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors flex items-center gap-1.5 border border-gray-200;
+}
+
+.language-dropdown {
+  @apply absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg p-1 min-w-[140px] z-50;
+}
+
+.language-option {
+  @apply px-3 py-2 text-sm text-gray-800 hover:bg-gray-50 flex items-center gap-2 cursor-pointer font-quicksand rounded-lg transition-colors;
+}
+
+.language-option.active {
+  @apply bg-gray-50;
+}
+
+.current-language {
+  @apply text-sm font-medium;
+}
+
+/* Sign In Button */
+.sign-in-button {
+  @apply font-quicksand font-medium bg-gray-800 text-white px-3 py-1.5 rounded-full hover:bg-gray-700 transition-colors text-xs;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  @apply fixed top-14 left-0 bottom-0 w-64 bg-white border-r border-gray-200 transform -translate-x-full transition-transform duration-300 ease-in-out z-40 overflow-y-auto;
+}
+
+.mobile-nav.open {
+  @apply translate-x-0;
+}
+
+/* Navigation Sections */
+.nav-sections {
+  @apply flex flex-col flex-1 relative py-4;
+}
+
+.nav-section {
+  @apply flex flex-col gap-1 px-2;
+}
+
+/* Navigation Links */
+.nav-link {
+  @apply flex items-center gap-3 text-gray-600 hover:text-gray-900 transition-colors font-quicksand font-medium p-2.5 rounded-lg hover:bg-gray-50 text-sm;
+}
+
+/* Main Content Area */
+.main-content {
+  @apply flex-1 flex flex-col mt-14;
+}
+
+/* Content Container */
+.white-container {
+  @apply flex-1 bg-white overflow-y-auto relative;
+}
+
+/* Scrollbar Styles */
+.white-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.white-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.white-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.white-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+/* Mobile Menu Overlay */
+.mobile-nav-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-30;
+  display: none;
+}
+
+.mobile-nav.open + .mobile-nav-overlay {
+  display: block;
+}

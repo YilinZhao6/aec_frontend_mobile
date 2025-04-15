@@ -1,0 +1,15 @@
+.notes-container {
+  @apply min-h-screen bg-gray-100 p-4;
+}
+
+.mobile-notes-message {
+  @apply flex flex-col items-center justify-center text-center bg-white rounded-xl p-8 shadow-sm space-y-4 mt-4;
+}
+
+.message-title {
+  @apply text-lg font-semibold text-gray-800 font-quicksand;
+}
+
+.message-text {
+  @apply text-sm text-gray-600 font-quicksand max-w-xs;
+}

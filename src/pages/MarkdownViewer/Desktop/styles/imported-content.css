@@ -1,0 +1,96 @@
+/* KaTeX styles */
+.katex-display > .katex {
+  font-size: 0.9775em !important;
+}
+
+.katex {
+  font-size: 1.265em !important;
+}
+
+li .katex {
+  font-size: 1.265em !important;
+}
+
+.katex .math {
+  font-family: 'STIX Two Math', KaTeX_Math !important;
+  font-style: italic !important;
+  font-feature-settings: "ss01" 1;
+}
+
+.katex .mathit,
+.katex .mathnormal,
+.katex .mathdefault {
+  font-family: KaTeX_Math, 'STIX Two Math' !important;
+  font-style: italic !important;
+  font-feature-settings: "ss01" 1;
+}
+
+.katex .mord {
+  font-family: KaTeX_Main, 'STIX Two Math' !important;
+  font-feature-settings: "ss01" 1;
+}
+
+.katex .mord.mtight,
+.katex .mord.text,
+.katex .mord.text > .text,
+.katex .mord.text > span[class*="mathtt"],
+.katex .mord.text > span[class*="mathsf"],
+.katex .mord.text > span[class*="mathrm"],
+.katex .mord.text.mtight,
+.katex .mord.text > span[class*="mathord"] {
+  font-style: normal !important;
+}
+
+/* Mermaid diagram styles */
+.mermaid {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.mermaid svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.mermaid .label {
+  font-family: 'Quicksand', sans-serif !important;
+}
+
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon,
+.mermaid .node path {
+  fill: #f3f4f6;
+  stroke: #9ca3af;
+  stroke-width: 1px;
+}
+
+.mermaid .edgePath .path {
+  stroke: #6b7280;
+  stroke-width: 1.5px;
+}
+
+.mermaid .arrowheadPath {
+  fill: #6b7280;
+  stroke: none;
+}
+
+.mermaid .nodeLabel {
+  color: #1f2937;
+  font-family: 'Quicksand', sans-serif !important;
+  font-size: 14px;
+}
+
+.mermaid .edgeLabel {
+  background-color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Quicksand', sans-serif !important;
+  font-size: 12px;
+  color: #4b5563;
+}

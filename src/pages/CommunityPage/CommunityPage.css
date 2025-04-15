@@ -1,0 +1,109 @@
+.community-container {
+  @apply min-h-[calc(100vh-3.5rem)] bg-gray-100 p-4;
+}
+
+.community-header {
+  @apply mb-8 text-center relative z-10;
+}
+
+.page-title {
+  @apply font-quicksand font-bold text-2xl text-gray-800 mb-2;
+}
+
+.page-subtitle {
+  @apply text-gray-600 font-quicksand;
+}
+
+.community-content {
+  @apply relative overflow-hidden;
+}
+
+.platforms-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto relative z-10;
+}
+
+.platform-card {
+  @apply relative h-48 sm:h-64 cursor-pointer;
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.card-face {
+  @apply absolute inset-0 flex flex-col items-center justify-center rounded-xl shadow-lg bg-white;
+  backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-front {
+  @apply p-6;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  @apply p-4;
+  transform: rotateY(180deg);
+}
+
+.platform-card.is-flipped .card-front {
+  transform: rotateY(180deg);
+}
+
+.platform-card.is-flipped .card-back {
+  transform: rotateY(360deg);
+}
+
+.platform-logo {
+  @apply w-16 h-16 sm:w-20 sm:h-20 object-contain mb-4;
+}
+
+.platform-name {
+  @apply text-lg font-semibold text-gray-800 font-quicksand;
+}
+
+.platform-description {
+  @apply text-sm text-gray-600 text-center font-quicksand mb-4;
+}
+
+.qr-code {
+  @apply w-32 h-32 sm:w-40 sm:h-40 object-contain mb-4;
+}
+
+.scan-text {
+  @apply text-sm text-gray-600 font-quicksand;
+}
+
+.join-button {
+  @apply px-6 py-2 bg-gray-800 text-white rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors font-quicksand;
+}
+
+.close-button {
+  @apply absolute top-2 right-2 p-2 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-full transition-colors;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .platform-card {
+    @apply h-40;
+  }
+
+  .platform-logo {
+    @apply w-12 h-12 mb-2;
+  }
+
+  .platform-name {
+    @apply text-base;
+  }
+
+  .qr-code {
+    @apply w-24 h-24 mb-2;
+  }
+
+  .platform-description {
+    @apply text-xs mb-2;
+  }
+
+  .join-button {
+    @apply px-4 py-1.5 text-xs;
+  }
+}

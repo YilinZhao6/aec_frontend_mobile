@@ -1,0 +1,40 @@
+/* Base styles */
+.markdown-viewer-container {
+  @apply flex flex-col h-screen bg-gray-100;
+}
+
+/* Content area */
+.markdown-viewer-content {
+  @apply flex-1 overflow-hidden;
+}
+
+.main-content-area {
+  @apply h-full p-4 overflow-y-auto;
+}
+
+.content-scroll-container {
+  @apply space-y-4;
+}
+
+/* Sections button */
+.sections-button {
+  @apply flex items-center gap-2 px-3 py-1.5 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors text-sm font-quicksand font-medium;
+}
+
+/* Import component styles */
+@import './styles/content.css';
+@import './styles/imported-content.css';
+
+/* Scrollbar Styles */
+.main-content-area::-webkit-scrollbar {
+  width: 6px;
+}
+
+.main-content-area::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content-area::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}

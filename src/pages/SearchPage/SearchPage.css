@@ -1,0 +1,271 @@
+/* Content Container */
+.content-container {
+  @apply max-w-5xl mx-auto mt-4 lg:mt-[4%] px-4 lg:px-8;
+}
+
+.greeting {
+  @apply font-quicksand font-bold text-2xl lg:text-3xl text-gray-800 mb-4 lg:mb-[4%];
+}
+
+.content-layout {
+  @apply space-y-6 lg:space-y-[4%];
+}
+
+/* Search card styles */
+.search-card {
+  @apply bg-gray-50 rounded-xl lg:rounded-2xl p-4 lg:p-6 shadow-sm mt-2 lg:mt-[2%] relative overflow-hidden min-w-[280px];
+  animation: cardGradient 8s ease infinite;
+  background: linear-gradient(
+    45deg,
+    rgb(243 244 246) 0%,
+    rgb(229 231 235) 25%,
+    rgb(243 244 246) 50%,
+    rgb(229 231 235) 75%,
+    rgb(243 244 246) 100%
+  );
+  background-size: 400% 400%;
+}
+
+@keyframes cardGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Search content layout */
+.search-content {
+  @apply flex flex-col lg:flex-row gap-4 lg:gap-6 relative z-10 min-w-[280px];
+}
+
+/* Main search area transitions */
+.search-main {
+  @apply w-full transition-all duration-150 ease-in-out;
+}
+
+.search-content.with-books .search-main {
+  @apply w-full lg:w-[65%] min-w-[280px];
+}
+
+.search-header {
+  @apply flex items-center justify-end mb-4 lg:mb-6;
+}
+
+.mode-switch {
+  @apply flex items-center gap-2 bg-white rounded-full p-1 border border-gray-200;
+}
+
+.mode-option {
+  @apply px-3 lg:px-4 py-1.5 rounded-full text-sm font-quicksand font-medium transition-colors;
+}
+
+.mode-option.active {
+  @apply bg-gray-800 text-white;
+}
+
+.mode-option.inactive {
+  @apply text-gray-600 hover:text-gray-900;
+}
+
+.search-input-container {
+  @apply relative;
+}
+
+.search-input {
+  @apply w-full text-gray-800 text-xl lg:text-2xl p-4 lg:p-6 pr-16 rounded-xl border-none outline-none shadow-sm placeholder-gray-400 font-quicksand font-normal bg-white/90 backdrop-blur-sm;
+  min-width: 280px;
+}
+
+.search-button {
+  @apply absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-colors;
+}
+
+.action-bar {
+  @apply flex items-center gap-4 mt-4 lg:mt-6 p-3 lg:p-4 bg-white/90 backdrop-blur-sm rounded-full shadow-sm;
+  min-width: 280px;
+}
+
+.icon-button {
+  @apply p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-full transition-colors;
+}
+
+.icon-button.active {
+  @apply bg-gray-800 text-white hover:bg-gray-700;
+}
+
+.comment-input {
+  @apply flex-1 bg-transparent text-gray-600 placeholder-gray-400 outline-none font-quicksand font-normal px-2;
+  min-width: 150px;
+}
+
+/* Books Panel */
+.books-panel {
+  @apply w-full lg:w-[35%] space-y-4;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(20px);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 200px;
+}
+
+.books-panel.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.book-search {
+  @apply flex items-center gap-2 bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 border border-gray-200;
+}
+
+.book-search input {
+  @apply bg-transparent w-full outline-none text-sm font-quicksand placeholder-gray-400;
+}
+
+/* Books list styles */
+.books-list {
+  @apply space-y-2 bg-white/90 backdrop-blur-sm rounded-lg border border-gray-200 p-2;
+  max-height: calc(100vh - 400px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.books-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.books-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.books-list::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+}
+
+.books-loading,
+.books-error,
+.books-empty {
+  @apply flex items-center justify-center gap-2 text-sm text-gray-500 font-quicksand h-32 text-center;
+}
+
+.book-item {
+  @apply flex items-center justify-between p-3 rounded-lg cursor-pointer hover:bg-gray-50 border border-gray-100 relative bg-white/90 backdrop-blur-sm transition-all;
+}
+
+.book-item.selected {
+  @apply bg-gray-50 border-gray-300;
+}
+
+.book-item.selected::after {
+  content: attr(data-selection-number);
+  @apply absolute -top-2 -right-2 w-5 h-5 bg-gray-800 text-white rounded-full flex items-center justify-center text-xs font-medium;
+  animation: numberAppear 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes numberAppear {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.book-info {
+  @apply flex items-start gap-2;
+}
+
+.book-details {
+  @apply flex flex-col min-w-0;
+}
+
+.book-title {
+  @apply text-sm font-medium text-gray-800 font-quicksand truncate;
+}
+
+.book-author {
+  @apply text-xs text-gray-500 font-quicksand truncate;
+}
+
+/* History sections */
+.history-section {
+  @apply bg-gray-50 rounded-xl lg:rounded-2xl overflow-hidden shadow-sm min-w-[280px] mx-auto max-w-2xl;
+}
+
+.history-header {
+  @apply bg-gray-100 px-4 lg:px-6 py-3 lg:py-4 flex items-center justify-between;
+}
+
+.history-title {
+  @apply text-gray-800 font-quicksand font-bold text-base lg:text-lg;
+}
+
+.history-list {
+  @apply p-4 lg:p-6 space-y-4;
+}
+
+.history-item {
+  @apply bg-white rounded-xl border border-gray-100 transition-colors hover:bg-gray-50;
+  height: 84px;
+}
+
+.history-content {
+  @apply h-full p-4 flex flex-col justify-between;
+}
+
+.history-item-title {
+  @apply text-gray-800 font-quicksand font-medium text-sm truncate;
+}
+
+.history-meta {
+  @apply text-xs;
+}
+
+/* Login Prompt */
+.login-prompt-container {
+  @apply flex justify-center items-center py-8 lg:py-12;
+}
+
+.login-prompt {
+  @apply flex flex-col items-center text-center max-w-lg mx-auto space-y-4 bg-white/90 backdrop-blur-sm rounded-xl p-6 lg:p-8 border border-gray-200 shadow-sm;
+}
+
+.login-prompt-title {
+  @apply text-lg lg:text-xl font-semibold text-gray-800 font-quicksand;
+}
+
+.login-prompt-text {
+  @apply text-gray-600 text-sm font-quicksand;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .search-input {
+    @apply text-lg p-4;
+  }
+  
+  .action-bar {
+    @apply p-2;
+  }
+  
+  .comment-input {
+    @apply text-sm;
+  }
+  
+  .history-sections {
+    @apply px-0;
+  }
+  
+  .books-list {
+    max-height: 300px;
+  }
+}

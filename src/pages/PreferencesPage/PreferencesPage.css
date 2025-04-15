@@ -1,0 +1,105 @@
+/* Preferences Container */
+.preferences-container {
+  @apply min-h-[calc(100vh-3.5rem)] bg-gray-100 p-4;
+}
+
+.preferences-header {
+  @apply mb-6;
+}
+
+.page-title {
+  @apply font-quicksand font-bold text-2xl text-gray-800 mb-2;
+}
+
+.page-subtitle {
+  @apply text-sm text-gray-500 font-quicksand;
+}
+
+/* Content Styles */
+.preferences-content {
+  @apply bg-white/90 backdrop-blur-sm rounded-xl p-6 border-2 border-gray-200 shadow-lg relative z-10;
+}
+
+/* Tab Styles */
+.tabs-container {
+  @apply mb-6 flex space-x-1 border-b border-gray-200 overflow-x-auto;
+}
+
+.tab-button {
+  @apply px-4 py-2 text-sm font-medium transition-all duration-200 font-quicksand whitespace-nowrap;
+}
+
+.tab-button.active {
+  @apply text-gray-900 border-b-2 border-gray-800;
+}
+
+.tab-button.inactive {
+  @apply text-gray-500 hover:text-gray-700;
+}
+
+/* Selection Grid */
+.selection-grid {
+  @apply grid grid-cols-2 gap-2;
+}
+
+.selection-item {
+  @apply flex items-center justify-center px-2 py-2 rounded-md text-xs sm:text-sm font-medium transition-all duration-200 ease-in-out font-quicksand border border-gray-200 text-center;
+}
+
+.selection-item.selected {
+  @apply bg-gray-800 text-white border-gray-800;
+}
+
+.selection-item.unselected {
+  @apply bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-gray-50;
+}
+
+/* Form Elements */
+.form-section {
+  @apply space-y-4 mb-6;
+}
+
+.form-group {
+  @apply space-y-1;
+}
+
+.input-label {
+  @apply block text-sm font-medium text-gray-700 font-quicksand;
+}
+
+.text-input {
+  @apply w-full p-2 text-sm border-2 border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent font-quicksand bg-white/80 backdrop-blur-sm;
+}
+
+.textarea-input {
+  @apply w-full p-2 text-sm border-2 border-gray-200 rounded-md resize-none h-32 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:border-transparent font-quicksand bg-white/80 backdrop-blur-sm;
+}
+
+/* Save Button */
+.save-button {
+  @apply w-full sm:w-auto px-4 py-2 bg-gray-800 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition-colors duration-200 font-quicksand;
+}
+
+/* Alert */
+.save-alert {
+  @apply fixed bottom-6 right-6 bg-green-50 text-green-800 px-4 py-2 rounded-md shadow-lg border-2 border-green-200 transition-opacity duration-500 text-sm font-quicksand z-50;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .preferences-content {
+    @apply p-4;
+  }
+
+  .tabs-container {
+    @apply -mx-4 px-4;
+  }
+
+  .save-alert {
+    @apply bottom-4 right-4 left-4;
+  }
+
+  .selection-item {
+    @apply text-xs px-2 py-1.5;
+  }
+}

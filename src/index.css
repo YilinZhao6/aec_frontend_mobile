@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-sweep {
+  animation: sweep 1.5s ease-in-out infinite;
+}
+
+/* Add LaTeX inline styles */
+.latex-inline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.latex-formula {
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 0;
+  vertical-align: middle;
+  padding: 2px 1px;
+}
+
+.latex-formula-empty,
+.latex-formula-error {
+  color: #ef4444;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+.latex-inline:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}

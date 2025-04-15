@@ -1,0 +1,285 @@
+/* Editor base styles */
+.editor-container {
+  @apply flex flex-col h-screen bg-gray-50;
+}
+
+.editor-header {
+  @apply flex items-center justify-between px-4 py-2 bg-white border-b border-gray-200 z-[9999] relative;
+}
+
+.editor-title {
+  @apply text-lg font-medium text-gray-800 font-quicksand;
+}
+
+.header-actions {
+  @apply flex items-center gap-2;
+}
+
+.editor-main {
+  @apply flex-1 overflow-hidden;
+}
+
+.editor-content {
+  @apply h-full overflow-y-auto bg-gray-50 px-4 relative;
+}
+
+/* ProseMirror Editor */
+.ProseMirror {
+  @apply pl-12 p-8 min-h-[calc(100vh-12rem)] outline-none font-quicksand bg-white max-w-[816px] mx-auto shadow-sm border border-gray-200 rounded-lg;
+  margin-top: 1.5rem; /* Add margin between toolbar and content */
+}
+
+/* Heading Styles */
+.ProseMirror h1 {
+  @apply text-3xl font-bold mb-4 font-quicksand;
+}
+
+.ProseMirror h2 {
+  @apply text-2xl font-bold mb-3 font-quicksand;
+}
+
+.ProseMirror h3 {
+  @apply text-xl font-bold mb-3 font-quicksand;
+}
+
+/* List Styles */
+.ProseMirror ul {
+  @apply list-disc pl-6 my-4;
+}
+
+.ProseMirror ol {
+  @apply list-decimal pl-6 my-4;
+}
+
+.ProseMirror li {
+  @apply my-1;
+}
+
+.ProseMirror li p {
+  @apply m-0;
+}
+
+/* Table Styles */
+.ProseMirror table {
+  @apply border-collapse table-auto w-full my-4;
+}
+
+.ProseMirror th {
+  @apply bg-gray-50 font-semibold p-2 border border-gray-200 text-left;
+}
+
+.ProseMirror td {
+  @apply p-2 border border-gray-200;
+}
+
+/* Blockquote Styles */
+.ProseMirror blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-4 text-gray-700;
+}
+
+/* Code Block Styles */
+.ProseMirror pre {
+  @apply bg-gray-100 rounded-lg p-4 font-mono text-sm my-4 overflow-x-auto;
+}
+
+/* Link Styles */
+.ProseMirror a {
+  @apply text-blue-600 hover:underline;
+}
+
+/* Ruler Styles */
+.ruler {
+  @apply absolute left-0 top-0 w-8 h-full bg-gray-50 border-r border-gray-200 flex flex-col items-center pt-2;
+  counter-reset: ruler;
+}
+
+.ruler-mark {
+  @apply relative h-6 w-full flex items-center justify-center text-xs text-gray-400 font-quicksand;
+}
+
+.ruler-mark::after {
+  content: '';
+  @apply absolute right-0 w-2 h-px bg-gray-300;
+}
+
+.ruler-number {
+  @apply text-[10px] mr-1;
+}
+
+/* Table of Contents Styles */
+.toc-container {
+  @apply fixed left-12 top-[120px] bg-white rounded-lg shadow-sm border border-gray-200 w-48 z-50;
+  max-height: calc(100vh - 180px);
+}
+
+.toc-header {
+  @apply flex items-center gap-2 px-3 py-2 bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors text-sm font-medium text-gray-700 font-quicksand sticky top-0 border-b border-gray-200 rounded-t-lg;
+}
+
+.toc-content {
+  @apply p-2 overflow-y-auto;
+  max-height: calc(100vh - 240px);
+}
+
+.toc-empty {
+  @apply text-sm text-gray-500 p-2 text-center font-quicksand;
+}
+
+.toc-list {
+  @apply space-y-1;
+}
+
+.toc-item {
+  @apply w-full text-left px-2 py-1.5 text-sm text-gray-600 hover:bg-gray-50 rounded transition-colors font-quicksand;
+}
+
+/* Toolbar Styles */
+.yuque-toolbar {
+  @apply flex items-center gap-1 px-4 py-2 bg-white border-b border-gray-200 overflow-x-auto sticky top-0 z-[9999];
+  min-height: 40px;
+}
+
+.toolbar-divider {
+  @apply w-px h-4 bg-gray-200 mx-1;
+}
+
+.toolbar-button {
+  @apply p-1.5 rounded text-gray-600 hover:bg-gray-100 transition-colors;
+}
+
+.toolbar-button.active {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.toolbar-select {
+  @apply px-2 py-1 rounded text-sm border border-gray-200 bg-white hover:bg-gray-50 transition-colors outline-none;
+}
+
+/* Image Styles */
+.resizable-image {
+  @apply max-w-full h-auto;
+}
+
+.image-resize-handle {
+  @apply absolute w-2 h-2 bg-white border border-gray-600 rounded-full;
+}
+
+.image-resize-handle.top-left {
+  @apply -top-1 -left-1 cursor-nw-resize;
+}
+
+.image-resize-handle.top-right {
+  @apply -top-1 -right-1 cursor-ne-resize;
+}
+
+.image-resize-handle.bottom-left {
+  @apply -bottom-1 -left-1 cursor-sw-resize;
+}
+
+.image-resize-handle.bottom-right {
+  @apply -bottom-1 -right-1 cursor-se-resize;
+}
+
+/* Concept Mark Styles */
+.concept-mark {
+  @apply relative cursor-pointer px-0.5 rounded transition-colors;
+}
+
+.concept-mark[data-concept-mode="fast"] {
+  @apply bg-yellow-50 border-b border-dashed border-yellow-400;
+}
+
+.concept-mark[data-concept-mode="normal"] {
+  @apply bg-blue-50 border-b border-dashed border-blue-400;
+}
+
+.concept-mark[data-concept-mode="pro"] {
+  @apply bg-purple-50 border-b border-dashed border-purple-400;
+}
+
+/* Dialog Styles */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-[99998];
+}
+
+.dialog-container {
+  @apply fixed inset-0 flex items-center justify-center z-[99999];
+}
+
+.dialog-content {
+  @apply bg-white rounded-xl p-6 max-w-md w-full mx-4 shadow-2xl;
+}
+
+/* Scrollbar Styles */
+.editor-content::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.editor-content::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.editor-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+.toc-content::-webkit-scrollbar {
+  @apply w-1;
+}
+
+.toc-content::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.toc-content::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded;
+}
+
+/* Auto-save Indicator */
+.autosave-indicator {
+  @apply flex items-center gap-2 text-sm text-gray-500 font-quicksand;
+}
+
+.autosave-indicator.saving {
+  @apply text-blue-600;
+}
+
+.autosave-indicator.saved {
+  @apply text-green-600;
+}
+
+/* Right Panel Styles */
+.right-panel {
+  @apply fixed top-0 right-0 w-[35%] h-screen bg-white shadow-lg transform transition-transform duration-300 ease-in-out;
+  border-left: 1px solid #e5e7eb;
+}
+
+.right-panel.closed {
+  transform: translateX(100%);
+}
+
+/* Imported content styling */
+.imported-content {
+  display: block;
+  background-color: #F0F0F0;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
+  color: #4A5568;
+}
+
+.imported-content::before {
+  content: 'Imported From Explanation';
+  position: absolute;
+  top: -0.75rem;
+  left: 0.75rem;
+  background-color: #F0F0F0;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  color: #6B7280;
+  border: 1px solid #CCCCCC;
+  border-radius: 2px;
+}

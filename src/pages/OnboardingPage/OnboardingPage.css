@@ -1,0 +1,188 @@
+/* Onboarding Container */
+.onboarding-container {
+  @apply min-h-screen bg-gray-100 flex flex-col items-center justify-center relative p-4;
+}
+
+/* Language Selection Step */
+.onboarding-language-selection {
+  @apply max-w-lg w-full bg-white rounded-2xl p-8 shadow-xl;
+}
+
+.onboarding-language-grid {
+  @apply grid grid-cols-2 gap-4 mt-6;
+}
+
+.onboarding-language-option {
+  @apply flex flex-col items-center justify-center p-6 border-2 border-gray-200 rounded-xl cursor-pointer transition-all duration-200;
+}
+
+.onboarding-language-option:hover {
+  @apply border-gray-800 bg-gray-50;
+}
+
+.onboarding-language-option.selected {
+  @apply border-gray-800 bg-gray-50;
+}
+
+.onboarding-language-name {
+  @apply text-lg font-semibold text-gray-800 mt-2 font-quicksand;
+}
+
+.onboarding-language-native {
+  @apply text-sm text-gray-500 font-quicksand;
+}
+
+/* Source Selection Step */
+.source-selection {
+  @apply max-w-lg w-full bg-white rounded-2xl p-8 shadow-xl;
+}
+
+.source-grid {
+  @apply grid grid-cols-2 gap-4 mt-6;
+}
+
+.source-option {
+  @apply flex flex-col items-center justify-center p-6 border-2 border-gray-200 rounded-xl cursor-pointer transition-all duration-200;
+}
+
+.source-option:hover {
+  @apply border-gray-800 bg-gray-50;
+}
+
+.source-option.selected {
+  @apply border-gray-800 bg-gray-50;
+}
+
+.source-icon {
+  @apply text-gray-600;
+}
+
+.source-name {
+  @apply text-sm font-medium text-gray-800 mt-2 font-quicksand;
+}
+
+/* Referral Code Step */
+.referral-code {
+  @apply max-w-lg w-full bg-white rounded-2xl p-8 shadow-xl;
+}
+
+.code-input {
+  @apply w-full mt-6 px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-gray-800 focus:border-transparent transition-all font-quicksand;
+}
+
+/* Profile Setup Step */
+.profile-setup {
+  @apply max-w-2xl w-full bg-white rounded-2xl p-8 shadow-xl overflow-y-auto;
+  max-height: calc(90vh - 240px);
+}
+
+/* Tutorials Step */
+.tutorials-container {
+  @apply max-w-4xl w-full bg-white rounded-2xl p-8 shadow-xl;
+}
+
+.tutorials-content {
+  @apply flex gap-6;
+}
+
+.tutorials-tabs {
+  @apply flex flex-col gap-2 w-64 flex-shrink-0;
+}
+
+.tutorial-tab {
+  @apply flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-50 transition-all text-sm font-quicksand font-medium;
+}
+
+.tutorial-tab.active {
+  @apply bg-gray-800 text-white hover:bg-gray-700;
+}
+
+.video-container {
+  @apply flex-1 space-y-4;
+}
+
+.tutorial-video {
+  @apply w-full rounded-lg shadow-lg;
+  aspect-ratio: 16/9;
+}
+
+.video-description {
+  @apply flex items-center gap-3 p-4 bg-gray-50 rounded-lg;
+}
+
+/* Profile Note */
+.profile-note {
+  @apply text-sm text-gray-500 text-center mt-4 font-quicksand;
+}
+
+/* Navigation */
+.navigation-container {
+  @apply fixed bottom-20 left-0 right-0 flex justify-center items-center gap-8;
+}
+
+.nav-button {
+  @apply p-3 rounded-full font-quicksand font-medium text-sm transition-colors;
+}
+
+.nav-button.back {
+  @apply text-gray-600 hover:bg-gray-100;
+}
+
+.nav-button.next {
+  @apply bg-gray-800 text-white hover:bg-gray-700;
+}
+
+.nav-button:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+  @apply fixed bottom-8 left-0 right-0 flex justify-center gap-2;
+}
+
+.progress-dot {
+  @apply w-2 h-2 rounded-full transition-all duration-200;
+}
+
+.progress-dot.active {
+  @apply bg-gray-800;
+}
+
+.progress-dot.inactive {
+  @apply bg-gray-300;
+}
+
+/* Skip Button */
+.skip-button {
+  @apply absolute top-4 right-4 px-4 py-2 text-sm text-gray-500 hover:text-gray-700 font-quicksand;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Scrollbar Styles */
+.profile-setup {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.profile-setup::-webkit-scrollbar {
+  width: 6px;
+}
+
+.profile-setup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.profile-setup::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
